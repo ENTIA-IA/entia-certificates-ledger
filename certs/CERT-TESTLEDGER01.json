@@ -1,0 +1,11 @@
+{
+  "cert_id": "CERT-TESTLEDGER01",
+  "file_name": "test_ledger.pdf",
+  "file_hash_sha256": "abc123test",
+  "timestamp_utc": "2026-03-17T12:00:00+00:00",
+  "tsa_provider": "FreeTSA.org",
+  "aware_seal": "test_seal_value",
+  "entity_id": "TEST-001",
+  "document_type": "test",
+  "standard": "RFC 3161 . eIDAS . SHA-256 . Aware Seal"
+}
