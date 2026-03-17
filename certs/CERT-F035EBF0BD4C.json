@@ -1,0 +1,11 @@
+{
+  "cert_id": "CERT-F035EBF0BD4C",
+  "file_name": "contrato_prueba_e2e.pdf",
+  "file_hash_sha256": "55f63455ce666d0460b5b60807e1d9c92110180a858c753486061cbb59302c3f",
+  "timestamp_utc": "2026-03-17T12:03:07.909938+00:00",
+  "tsa_provider": "FreeTSA.org",
+  "aware_seal": "3a2c9a98320684c3f6d7e2be936f375670adde9f57b27a3edf4dd058969858d7",
+  "entity_id": "E-ES-TEST-00000001",
+  "document_type": "contrato",
+  "standard": "RFC 3161 . eIDAS . SHA-256 . Aware Seal"
+}
