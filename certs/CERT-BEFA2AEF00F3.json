@@ -1,0 +1,11 @@
+{
+  "cert_id": "CERT-BEFA2AEF00F3",
+  "file_name": "ENTIA_NOTARIA_CLAUDE_CODE_BRIEFING.md",
+  "file_hash_sha256": "e06603473cf29a629a1d87490b2b00af191310bf23c6add29f66489e7d55d2ca",
+  "timestamp_utc": "2026-03-19T18:55:47.253056+00:00",
+  "tsa_provider": "FreeTSA.org",
+  "aware_seal": "a8b48512555778672db2bc55c621d75fe7804295e7a49a5581b414ba041778bb",
+  "entity_id": "public-notaria",
+  "document_type": "general",
+  "standard": "RFC 3161 . eIDAS . SHA-256 . Aware Seal"
+}
