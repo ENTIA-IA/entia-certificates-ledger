@@ -1,0 +1,11 @@
+{
+  "cert_id": "CERT-F0651983C5ED",
+  "file_name": "test_notaria.txt",
+  "file_hash_sha256": "a1fff0ffefb9eace7230c24e50731f0a91c62f9cefdfe77121c2f607125dffae",
+  "timestamp_utc": "2026-03-19T18:46:06.068695+00:00",
+  "tsa_provider": "FreeTSA.org",
+  "aware_seal": "1de5b8b7f398dea8cc4a5adcf6e34f503267b3a3ea01744697b5a527156bd4f5",
+  "entity_id": "test-notaria",
+  "document_type": "contract",
+  "standard": "RFC 3161 . eIDAS . SHA-256 . Aware Seal"
+}
