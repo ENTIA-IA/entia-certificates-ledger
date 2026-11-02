@@ -4,9 +4,9 @@
 
 # ENTIA Certificates Ledger
 
-**Public, immutable cryptographic ledger for ENTIA Notaría Digital.**
+**Public Git record of cryptographic evidence for ENTIA Notaría Digital. Not a register of ISO certifications or government accreditations.**
 
-[![eIDAS](https://img.shields.io/badge/eIDAS-EU_Trust_List-22c55e?style=flat-square)](https://entia.systems/compliance)
+[eIDAS framework and actual verification requirements](https://digital-strategy.ec.europa.eu/en/policies/eu-trusted-lists)
 [![RFC 3161](https://img.shields.io/badge/RFC_3161-Timestamp-3b82f6?style=flat-square)](https://www.rfc-editor.org/rfc/rfc3161)
 [![SHA-256](https://img.shields.io/badge/SHA--256-Hash-f59e0b?style=flat-square)](https://entia.systems/notaria)
 [![Verify](https://img.shields.io/badge/Verify-entia.systems%2Fnotaria-white?style=flat-square)](https://entia.systems/notaria)
@@ -17,20 +17,20 @@
 
 ## What This Repository Is
 
-Every document certified by [ENTIA Notaría Digital](https://entia.systems/notaria) generates a **cryptographic certificate** that is committed to this public Git repository. This creates an **immutable, auditable, time-stamped audit trail** that cannot be altered retroactively.
+This repository publishes selected cryptographic certificate metadata associated with [ENTIA Notaría Digital](https://entia.systems/notaria). The Git history is reviewable and hash-linked, but **a repository administrator can rewrite Git history**. Independent verification of the evidence and any qualified timestamp must be performed separately.
 
-This is not a database — it is a **legal evidence chain** compliant with EU regulation eIDAS (910/2014).
+The presence of metadata in this repository alone is **not** proof of legal validity under eIDAS. Legal effects depend on the actual signed or time-stamped artefact, trust-service status at the relevant time, and an independent validation of that evidence.
 
 ## Certificate Structure
 
-Each certificate file in `/certs/` contains:
+Each certificate file in `/certs/` may include fields like those in this **illustrative** example (example values do not prove a live seal):
 
 ```json
 {
   "cert_id": "CERT-A1B2C3D4E5F6",
   "file_hash_sha256": "a3f2b8c9d4e5f6...",
   "timestamp_utc": "2026-03-27T10:30:00Z",
-  "tsa_provider": "SK ID Solutions (Estonian government)",
+  "tsa_provider": "Provider stated by the actual verified timestamp",
   "hmac_seal": "HMAC-SHA256:7f8a9b0c1d2e...",
   "entity_id": "E-ES-DEN-12345678",
   "status": "CERTIFIED",
@@ -43,9 +43,9 @@ Each certificate file in `/certs/` contains:
 ```
 Document submitted
   → SHA-256 hash computed
-  → RFC 3161 timestamp requested from SK ID Solutions (EU Trust List TSA)
+  → RFC 3161 timestamp requested from the configured TSA, if enabled
   → HMAC-SHA256 seal applied with ENTIA signing key
-  → Certificate committed to this Git repository (immutable)
+  → Certificate metadata committed to this Git repository (versioned)
   → Certificate ID returned to client
   → Verifiable at entia.systems/notaria
 ```
@@ -62,29 +62,29 @@ curl https://entia.systems/api/notaria/verify/CERT-A1B2C3D4E5F6
 # Visit https://entia.systems/notaria and enter the cert_id
 ```
 
-## Standards Compliance
+## Standards and legal references (not independent certifications)
 
-| Standard | Compliance |
+| Reference | Technical relevance / verification requirement |
 |---|---|
-| **eIDAS** | EU Regulation 910/2014, Articles 41-42 (qualified timestamps) |
-| **ETSI EN 319 421** | Policy and security requirements for TSA |
-| **RFC 3161** | Internet X.509 PKI Time-Stamp Protocol |
-| **SHA-256** | NIST FIPS 180-4 hash algorithm |
-| **HMAC-SHA256** | RFC 2104 keyed-hash message authentication |
-| **GDPR** | EU Regulation 2016/679 (no personal data in certificates) |
-| **EU AI Act** | Regulation 2024/1689 (data provenance for AI systems) |
+| **eIDAS** | EU framework; independently verify the exact trust service and qualification status for each applicable timestamp |
+| **ETSI EN 319 421** | Technical requirements applying to time-stamping service providers; not a claim of ENTIA certification |
+| **RFC 3161** | Protocol reference for timestamp token validation, when a token exists |
+| **SHA-256** | Hashing algorithm reference; check digest independently |
+| **HMAC-SHA256** | Message authentication reference; independent third parties cannot verify a secret-key HMAC without a suitable verification process |
+| **GDPR** | Applicable data-protection obligations must be evaluated separately; this table is not a compliance declaration |
+| **EU AI Act** | Possible governance context only; no assertion of certified compliance |
 
 ## Why Git as a Ledger?
 
-1. **Immutable** — Git commits cannot be altered without changing all subsequent hashes
+1. **Tamper-evident** — modifying commits changes hashes; Git branch history is not immutable and requires independent anchoring for stronger assurances
 2. **Public** — Anyone can clone and verify the entire certificate chain
-3. **Time-stamped** — Git commit timestamps + RFC 3161 provide dual temporal proof
+3. **Temporal evidence** — Git commit timestamps are repository metadata; qualified legal time evidence requires a separately validated trusted timestamp where present
 4. **Auditable** — Full history available via `git log`
 5. **Decentralized** — Mirrors can be created by anyone, GitHub is just the primary host
 
 ## Company
 
-**PrecisionAI Marketing OÜ** · Registry 17048063 · EU VAT: EE102780516 · DUNS: 565868914
+**PrecisionAI Marketing OÜ** · Estonian registry code 17048063 · DUNS: 565868914 · VAT status: [see the company's dated corporate-status notice](https://entia.systems/legal/en/corporate-status) (former VAT number is historical, not a current identifier)
 
 Sepapaja tn 4, 11415 Tallinn, Harju Maakond, Estonia
 
